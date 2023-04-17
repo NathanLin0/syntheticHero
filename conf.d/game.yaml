@@ -1,0 +1,69 @@
+# 模擬資料建置設定
+
+#
+canMoveedToDiagonal: false
+
+# 遊戲設定
+
+row: 6      # 行
+column: 6   # 列
+minimumConnections: 3 # 最低連線數
+maximumConnections: 5 # 最高連線數
+
+# 消除角色 代號
+eliminateRole: 0
+# 升級角色 標記
+upgradeRoleTag: -1
+# 任意角色 標記
+anyRoleTag: -999
+
+coinRole: &CoinRole 5
+chestRole: &ChestRole 999
+
+roleALevel0: &RoleALevel0 1
+roleALevel1: &RoleALevel1 10
+roleALevel2: &RoleALevel2 100
+roleALevel3: &RoleALevel3 1000
+roleALevel4: &RoleALevel4 10000
+
+roleBLevel0: &RoleBLevel0 2
+roleBLevel1: &RoleBLevel1 20
+roleBLevel2: &RoleBLevel2 200
+roleBLevel3: &RoleBLevel3 2000
+roleBLevel4: &RoleBLevel4 20000
+
+roleCLevel0: &RoleCLevel0 3
+roleCLevel1: &RoleCLevel1 30
+roleCLevel2: &RoleCLevel2 300
+roleCLevel3: &RoleCLevel3 3000
+roleCLevel4: &RoleCLevel4 30000
+
+roleDLevel0: &RoleDLevel0 4
+roleDLevel1: &RoleDLevel1 40
+roleDLevel2: &RoleDLevel2 400
+roleDLevel3: &RoleDLevel3 4000
+roleDLevel4: &RoleDLevel4 40000
+
+
+# 角色列表
+defaultGenerateRoles: [*RoleALevel0, *RoleBLevel0, *RoleCLevel0, *RoleDLevel0, *CoinRole]
+
+# 角色升級
+upgradeRolesMap:
+  *RoleALevel0: *RoleALevel1
+  *RoleALevel1: *RoleALevel2
+  *RoleALevel2: *RoleALevel3
+  *RoleALevel3: *RoleALevel4
+  *RoleBLevel0: *RoleBLevel1
+  *RoleBLevel1: *RoleBLevel2
+  *RoleBLevel2: *RoleBLevel3
+  *RoleBLevel3: *RoleBLevel4
+  *RoleCLevel0: *RoleCLevel1
+  *RoleCLevel1: *RoleCLevel2
+  *RoleCLevel2: *RoleCLevel3
+  *RoleCLevel3: *RoleCLevel4
+  *RoleDLevel0: *RoleDLevel1
+  *RoleDLevel1: *RoleDLevel2
+  *RoleDLevel2: *RoleDLevel3
+  *RoleDLevel3: *RoleDLevel4
+  *CoinRole: *ChestRole
